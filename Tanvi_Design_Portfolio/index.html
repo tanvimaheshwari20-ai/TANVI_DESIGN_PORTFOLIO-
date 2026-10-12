@@ -1,0 +1,748 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="description" content="Tanvi Maheshwari — fashion designer portfolio featuring design collections, brand work, embroidery exploration and hand illustrated looks.">
+<meta property="og:title" content="Tanvi Maheshwari | Fashion Designer">
+<meta property="og:description" content="Selected fashion design work, craftsmanship and visual exploration.">
+<meta property="og:type" content="website">
+<title>Tanvi Maheshwari | Fashion Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap"></noscript>
+<style>
+        img { background-color: #f5f3ef; }
+:root{--paper:#fff;--ink:#000;--line:#d8d8d8;--serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.7 var(--sans)}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;min-height:76px;padding:0 clamp(20px,5.5vw,80px);display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line)}
+.brand{font:400 clamp(22px,2.7vw,34px)/1 var(--serif);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:clamp(20px,3vw,42px)}
+.nav a{position:relative;padding:10px 0;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.nav a:after{content:"";position:absolute;left:0;bottom:4px;width:100%;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.nav a:hover:after,.nav a[aria-current=page]:after{transform:scaleX(1)}
+.menu-toggle{display:none;border:0;background:transparent;padding:8px;cursor:pointer}
+.menu-toggle span{display:block;width:23px;height:1px;background:#000;margin:5px 0}
+main{min-height:65vh;padding-top:76px;padding-bottom:88px}
+.page{display:none;animation:fade-in .35s ease}
+.page.active{display:block}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+/* Home */
+.home{padding:36px clamp(18px,5.5vw,80px) 65px}
+.hero-frame{position:relative;width:min(100%,1020px);margin:0 auto;padding:0 30px}
+.hero-image{width:100%;aspect-ratio:1.62/1;min-height:360px;background:#fff;border:1px solid #eee;overflow:hidden}
+.hero-image img{display:block;width:100%;height:100%;min-height:360px;object-fit:cover;object-position:center 38%}
+.tape{position:absolute;top:0;bottom:0;width:22px;border:1px solid #aaa;background:repeating-linear-gradient(to bottom,transparent 0 18px,#555 18px 19px,transparent 19px 29px,#777 29px 30px,transparent 30px 38px),#fff}
+.tape.left{left:0}.tape.right{right:0}
+.tape:after{position:absolute;top:50%;left:50%;writing-mode:vertical-rl;transform:translate(-50%,-50%);font:9px var(--sans);letter-spacing:.14em;background:#fff;padding:3px 0;content:"0 1 2 3 4 5 6 7 8 9"}
+/* Portfolio */
+.section{max-width:1280px;margin:0 auto;padding:65px clamp(20px,5.5vw,80px) 85px}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;padding-bottom:17px;border-bottom:1px solid var(--line);margin-bottom:32px}
+.eyebrow{margin:0 0 8px;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;margin:0}
+h1,h2{font-size:clamp(32px,4vw,48px)}
+.section-heading .count{font-size:10px;letter-spacing:.18em;white-space:nowrap}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 26px}
+.project{display:block;min-width:0;transition:opacity .35s ease,filter .35s ease}
+.project:focus-visible{outline:2px solid #000;outline-offset:5px}
+.project-image{position:relative;aspect-ratio:1.48/1;background:#fff;border:1px solid #e5e5e5;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.project-image img{
+            will-change: transform;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.project:hover .project-image img{
+            will-change: transform;transform:scale(1.035)}
+.project-image:after{content:attr(data-label);position:absolute;inset:auto 10px 10px auto;padding:3px 6px;background:rgba(255,255,255,.85);font:10px var(--sans);letter-spacing:.2em;color:#444;border:1px solid #eee}
+.project-caption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:10px}
+.project-caption h3{font-size:clamp(23px,2.6vw,30px)}
+
+.project[data-project="collection"] .project-image img{
+            will-change: transform;
+ object-fit:cover;
+ object-position:center;
+}
+.project-caption .project-title-group{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:1px}
+.project-caption .project-title-group .project-theme{
+ font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#666;line-height:1.5
+}
+.project-caption .project-index{flex:0 0 auto}
+
+.project-caption span{font-size:10px;letter-spacing:.12em;color:#666}
+.project-grid:has(.project:hover) .project:not(:hover){opacity:.3;filter:brightness(1.35)}
+
+/* Belk thumbnail: preserve the existing card dimensions; only control crop position. */
+.project[data-project="brand-work"] .project-image img{
+            will-change: transform;
+ object-position:50% 43%;
+}
+
+/* Dedicated project view: grid and portfolio heading are removed while a project is open */
+.portfolio-section.project-mode .section-heading,
+.portfolio-section.project-mode .project-grid{display:none}
+.project-detail{
+ display:none;
+ width:100vw;
+ max-width:none;
+ margin:0 0 0 calc(50% - 50vw);
+ padding:28px clamp(20px,5.5vw,80px) 70px;
+ border-top:0;
+}
+.project-detail.open{display:block;animation:fade-in .35s ease both}
+.project-detail .detail-close{
+ display:inline-block;
+ margin:0 0 28px;
+ border:0;
+ border-bottom:1px solid #000;
+ background:none;
+ padding:5px 0;
+ color:var(--ink);
+ font-size:10px;
+ letter-spacing:.15em;
+ text-transform:uppercase;
+ cursor:pointer;
+}
+.detail-header{display:flex;justify-content:space-between;align-items:start;gap:24px;margin-bottom:30px;padding-bottom:20px;border-bottom:1px solid #eee}
+.detail-copy h2{margin-bottom:8px}
+.detail-copy p{max-width:650px;color:#444}
+.detail-visual-default{min-height:300px;border:1px solid #e5e5e5;display:grid;place-items:center;font-size:10px;letter-spacing:.18em;color:#777;margin-top:20px}
+/* Embroidery Exploration uses the same fixed landscape thumbnail dimensions as every project card */
+.project[data-project="embroidery-exploration"] .project-image{aspect-ratio:1.48/1}
+.project[data-project="embroidery-exploration"] .project-image img{
+            will-change: transform;
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ object-position:50% 44%;
+ transition:transform .6s ease;
+}
+/* Embroidery Exploration — asymmetric, natural-ratio collage */
+
+.embroidery-layout{
+ display:grid;
+ grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);
+ column-gap:clamp(22px,3.5vw,42px);
+ align-items:stretch;
+ margin-top:20px;
+}
+.embroidery-col{min-width:0}
+.embroidery-col-title{
+ font-family:var(--serif);
+ font-size:clamp(28px,3vw,34px);
+ font-weight:400;
+ line-height:1.08;
+ margin:0 0 24px;
+ text-align:left;
+}
+.embroidery-divider{width:1px;background:#d8d8d8;align-self:stretch}
+.collage-wrap{display:grid;gap:14px;align-items:start;grid-auto-rows:min-content}
+.embroidery-col:first-child .collage-wrap{
+ grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr);
+ grid-template-areas:"a b" "c b" "c d";
+ column-gap:14px;row-gap:14px;
+}
+.embroidery-col:first-child .collage-item:nth-child(1){grid-area:a}
+.embroidery-col:first-child .collage-item:nth-child(2){grid-area:b;margin-top:6px}
+.embroidery-col:first-child .collage-item:nth-child(3){grid-area:c}
+.embroidery-col:first-child .collage-item:nth-child(4){grid-area:d}
+.embroidery-col:last-child .collage-wrap{
+ display:block;
+ columns:3;
+ column-gap:8px;
+ column-fill:balance;
+}
+.embroidery-col:last-child .collage-item{
+ display:inline-block;
+ width:100%;
+ max-width:100%;
+ margin:0 0 8px;
+ break-inside:avoid;
+ vertical-align:top;
+}
+.embroidery-col:last-child .collage-item img{
+ width:100%;
+ height:auto;
+ object-fit:contain;
+}
+.collage-item{
+ display:block;min-width:0;max-width:100%;cursor:pointer;position:relative;
+ transition:transform .3s ease,filter .3s ease;
+ border:1px solid #eee;background:#fff;padding:0;align-self:start;
+}
+.collage-item:hover{transform:scale(1.015);filter:brightness(.97);box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.collage-item img{
+ display:block;width:100%;max-width:100%;height:auto;object-fit:contain;cursor:pointer;
+}
+
+/* Default visual box for other projects */
+.detail-visual-default{min-height:300px;border:1px solid #e5e5e5;display:grid;place-items:center;font-size:10px;letter-spacing:.18em;color:#777;margin-top:20px}
+
+/* Fullscreen Lightbox Modal */
+.lightbox-modal{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);backdrop-filter:blur(4px);justify-content:center;align-items:center;padding:20px;animation:fade-in .25s ease}
+.lightbox-modal.active{display:flex}
+.lightbox-content{display:block;width:auto;height:auto;max-width:92vw;max-height:92vh;object-fit:contain;cursor:default;box-shadow:0 10px 40px rgba(0,0,0,0.5);border:1px solid #333}
+.lightbox-close{position:absolute;top:24px;right:30px;background:none;border:none;color:#fff;font-size:36px;line-height:1;cursor:pointer;padding:8px 12px;transition:opacity .2s}
+.lightbox-close:hover{opacity:.7}
+
+
+/* Hand Illustrated Looks — original artwork gallery */
+.hand-illustrated-gallery{width:100%;margin:24px 0 0}
+.hand-look-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start}
+.hand-look-card{display:block;width:100%;padding:0;margin:0;border:0;background:transparent;cursor:zoom-in;line-height:0;overflow:hidden}
+.hand-look-card img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;transition:opacity .18s ease}
+.hand-look-card:hover img{opacity:.92}
+#lightbox-modal .lightbox-content{max-width:calc(100vw - 140px);max-height:92vh;object-fit:contain;box-shadow:none;border:0}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.38);color:#fff;width:46px;height:58px;font-size:34px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.lightbox-nav:hover{background:rgba(255,255,255,.24)}
+.lightbox-prev{left:20px}.lightbox-next{right:20px}
+.lightbox-count{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#fff;font:11px/1.4 Inter,Arial,sans-serif;letter-spacing:.12em}
+@media(max-width:1000px){.hand-look-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}}
+@media(max-width:650px){.hand-look-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#lightbox-modal{padding:12px}#lightbox-modal .lightbox-content{max-width:calc(100vw - 76px);max-height:88vh}.lightbox-nav{width:32px;height:46px;font-size:26px}.lightbox-prev{left:5px}.lightbox-next{right:5px}.lightbox-close{top:8px;right:8px}}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,82px);align-items:start}
+.portrait{min-height:0;border:1px solid #e5e5e5;background:#fff;overflow:hidden}
+.portrait img{display:block;width:100%;height:auto;max-height:760px;object-fit:contain;object-position:center top}
+.about-copy h1{margin-bottom:7px}
+.role{font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 22px}
+.bio{max-width:600px;color:#333;margin:0 0 28px}
+.resume-block{border-top:1px solid var(--line);padding:17px 0}
+.resume-block h2{font:500 10px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+.resume-block p{margin:5px 0;font-size:13px;line-height:1.65}.about-date{font-size:11px;color:#666}
+.resume-block strong{font-weight:500}
+.skills{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px}
+.button{display:inline-block;border:1px solid #000;background:#000;color:#fff;padding:11px 20px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+.button:hover{background:#fff;color:#000}
+.site-footer{position:fixed;left:0;right:0;bottom:0;z-index:90;background:rgba(255,255,255,.98);border-top:1px solid var(--line);text-align:center;padding:12px 20px 9px;margin:0;backdrop-filter:blur(8px)}
+.footer-contacts{display:flex;align-items:center;justify-content:center;gap:14px}
+.footer-contacts a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.footer-contacts a:hover{text-decoration:underline;text-underline-offset:4px}
+.site-footer a{font-size:12px;text-decoration:underline;text-underline-offset:3px}
+.copyright{font-size:10px;color:#777;margin:4px 0 0}
+
+@media(max-width:768px){
+ .site-header{min-height:68px;padding:0 20px}.brand{font-size:19px;letter-spacing:.05em}main{padding-top:68px;padding-bottom:82px}.site-footer{padding:10px 16px 7px}
+ .menu-toggle{display:block}
+ .nav{display:none;position:absolute;top:68px;left:0;right:0;padding:20px 24px 26px;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:12px}
+ .nav.open{display:flex}.nav a{font-size:12px}
+ .home{padding:26px 18px 48px}.hero-frame{padding:0 20px}.hero-image{aspect-ratio:.85/1;min-height:350px}
+ .tape{width:15px}
+ .section{padding:40px 22px 58px}
+ .section-heading{align-items:start;flex-direction:column;gap:8px;margin-bottom:24px}
+ .project-grid{grid-template-columns:1fr;gap:25px}
+ .project-image{aspect-ratio:1.35/1}
+ .about-grid{grid-template-columns:1fr;gap:26px}.portrait{min-height:360px;max-width:440px}
+ .embroidery-layout{grid-template-columns:1fr;gap:40px}
+ .embroidery-divider{width:100%;height:1px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media print{
+ .site-header,.site-footer,.menu-toggle,.button{display:none!important}
+ body{font-size:11pt}.page{display:none!important}#about{display:block!important}
+ .section{padding:0}.about-grid{grid-template-columns:1fr}.portrait{display:none}
+}
+
+/* Belk Design Development: image pages stay in a fixed landscape presentation area. */
+.belk-presentation{display:grid;grid-template-columns:minmax(0,1fr);gap:34px;max-width:1280px;margin:0 auto}
+.belk-page{margin:0;min-width:0}
+.belk-image-button{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:16/9;max-height:calc(100vh - 190px);padding:0;border:0;background:#fff;overflow:hidden;cursor:zoom-in}
+.belk-image-button img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.belk-page-footer{display:flex;justify-content:space-between;gap:16px;padding:10px 0 0;border-bottom:1px solid var(--line);padding-bottom:12px;font-size:10px;letter-spacing:.14em;color:#666;text-transform:uppercase}
+.belk-viewer{display:none;position:fixed;inset:0;z-index:1001;background:rgba(0,0,0,.96);align-items:center;justify-content:center;padding:64px 76px 58px}
+.belk-viewer.active{display:flex}
+.belk-viewer img{display:block;max-width:100%;max-height:calc(100vh - 130px);width:auto;height:auto;object-fit:contain}
+.belk-viewer-close,.belk-viewer-prev,.belk-viewer-next{position:absolute;border:0;background:rgba(0,0,0,.25);color:#fff;cursor:pointer;display:grid;place-items:center}
+.belk-viewer-close{top:14px;right:20px;font-size:34px;line-height:1;padding:8px 12px}
+.belk-viewer-prev,.belk-viewer-next{top:50%;transform:translateY(-50%);width:44px;height:60px;font-size:34px}
+.belk-viewer-prev{left:14px}.belk-viewer-next{right:14px}
+.belk-viewer-count{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#fff;font-size:11px;letter-spacing:.16em}
+body.belk-viewer-open{overflow:hidden}
+@media(max-width:768px){
+ .belk-presentation{gap:24px}
+ .belk-image-button{aspect-ratio:16/9;max-height:none}
+ .belk-page-footer{font-size:9px;letter-spacing:.09em}
+ .belk-viewer{padding:58px 12px 58px}
+ .belk-viewer img{max-width:100%;max-height:calc(100vh - 125px)}
+ .belk-viewer-prev{left:2px}.belk-viewer-next{right:2px}
+}
+
+
+/* Graduation Collection lookbook — additive styles only */
+.graduation-lookbook{margin-top:26px}
+.lookbook-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:0 0 12px;margin-bottom:18px;border-bottom:1px solid #ddd;font:10px var(--sans);letter-spacing:.16em;color:#555}
+.lookbook-count{font-variant-numeric:tabular-nums;white-space:nowrap}
+.lookbook-slides{display:grid;grid-template-columns:1fr;gap:30px}
+.lookbook-slide{display:block;width:100%;min-width:0;padding:0;border:0;background:transparent;color:inherit;text-align:left;cursor:zoom-in}
+.lookbook-slide img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:#f7f5f1}
+.lookbook-slide-caption{display:flex;align-items:center;gap:16px;padding:10px 2px 0;font:10px var(--sans);letter-spacing:.1em;color:#555}
+.lookbook-slide-caption span:first-child{font-variant-numeric:tabular-nums}
+.lookbook-slide-caption span:nth-child(2){flex:1}
+.lookbook-viewer{position:fixed;inset:0;z-index:99999;background:rgba(18,17,16,.97);display:none;align-items:center;justify-content:center;padding:58px 76px 68px;color:#fff}
+.lookbook-viewer.open{display:flex}
+.lookbook-viewer-figure{margin:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:0;min-height:0}
+.lookbook-viewer-figure img{display:block;max-width:calc(100vw - 152px);max-height:calc(100vh - 112px);width:auto;height:auto;object-fit:contain;flex:0 1 auto}
+.lookbook-viewer-figure figcaption{width:min(100%,1200px);display:flex;justify-content:space-between;gap:18px;font:10px var(--sans);letter-spacing:.14em;color:#eee}
+.lookbook-close,.lookbook-prev,.lookbook-next{position:absolute;border:1px solid rgba(255,255,255,.38);background:rgba(0,0,0,.18);color:#fff;cursor:pointer;display:grid;place-items:center}
+.lookbook-close{top:18px;right:22px;width:42px;height:42px;border-radius:50%;font-size:28px;font-weight:300}
+.lookbook-prev,.lookbook-next{top:50%;transform:translateY(-50%);width:42px;height:54px;border-radius:2px;font-size:24px}
+.lookbook-prev{left:18px}.lookbook-next{right:18px}
+.lookbook-close:hover,.lookbook-prev:hover,.lookbook-next:hover{background:rgba(255,255,255,.16)}
+body.lookbook-viewer-open{overflow:hidden}
+@media(max-width:700px){
+ .lookbook-slides{gap:22px}
+ .lookbook-toolbar{font-size:9px}
+ .lookbook-viewer{padding:60px 12px 56px}
+ .lookbook-prev,.lookbook-next{top:auto;bottom:10px;transform:none;width:42px;height:38px}
+ .lookbook-prev{left:calc(50% - 48px)}.lookbook-next{right:calc(50% - 48px)}
+ .lookbook-close{top:10px;right:10px;width:36px;height:36px}
+ .lookbook-viewer-figure img{max-width:calc(100vw - 24px);max-height:calc(100vh - 126px)}
+ .lookbook-viewer-figure figcaption{font-size:9px;padding:0 4px}
+}
+
+</style>
+    <link rel="preload" as="image" href="images/img_01.jpg">
+</head>
+<body>
+<header class="site-header">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <a class="brand" href="#portfolio" aria-label="Tanvi Maheshwari — Portfolio">Tanvi Maheshwari</a>
+ <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+ <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+  <a href="#portfolio" data-page="portfolio" aria-current="page">Portfolio</a>
+  <a href="#about" data-page="about">About</a>
+ </nav>
+</header>
+<main>
+ <section class="page" id="portfolio" aria-label="Portfolio">
+  <div class="section portfolio-section">
+   <div class="section-heading"><div><p class="eyebrow">Selected work</p><h1>Portfolio</h1></div><span class="count">01 — 04</span></div>
+   <div class="project-grid">
+    <a class="project" href="#collection" data-project="collection" aria-label="Open Graduation Collection — Fusion Weave details">
+     <div class="project-image graduation-thumbnail" data-label="GRADUATION COLLECTION"><img decoding="async" fetchpriority="high" src="images/img_01.jpg" alt="Graduation Collection — Fusion Weave cover artwork" loading="eager"></div>
+     <div class="project-caption"><div class="project-title-group"><h3>Graduation Collection</h3><span class="project-theme">Fusion Weave</span></div><span class="project-index">01</span></div>
+    </a>
+    <a class="project" href="#brand-work" data-project="brand-work" aria-label="Open Belk — Design Development details">
+     <div class="project-image" data-label="BELK — DESIGN DEVELOPMENT"><img decoding="async" src="images/img_02.jpg" alt="Belk — Design Development" loading="lazy"></div>
+     <div class="project-caption"><h3>Belk — Design Development</h3><span>02</span></div>
+    </a>
+    <a class="project" href="#embroidery-exploration" data-project="embroidery-exploration" aria-label="Open Embroidery Exploration details">
+     <div class="project-image" data-label="EMBROIDERY EXPLORATION"><img decoding="async" src="images/img_03.jpg" alt="Pixelated rose embroidery on linen" loading="lazy"></div>
+     <div class="project-caption"><h3>Embroidery Exploration</h3><span>03</span></div>
+    </a>
+    <a class="project" href="#hand-sketches" data-project="hand-sketches" aria-label="Open Hand Sketches details">
+     <div class="project-image" data-label="HAND ILLUSTRATED LOOKS"><img decoding="async" src="images/img_04.jpg" alt="Hand Illustrated Looks — sage-green and gold couture fashion illustration on a warm patterned background" loading="lazy"></div>
+     <div class="project-caption"><h3>Hand Illustrated Looks</h3><span>04</span></div>
+    </a>
+   </div>
+   <div class="project-detail" id="project-detail" aria-live="polite">
+    <button class="detail-close" type="button" aria-label="Back to Portfolio">← BACK TO PORTFOLIO</button>
+    <div class="detail-header">
+     <div class="detail-copy">
+      <p class="eyebrow" id="detail-number">PROJECT / 03</p>
+      <h2 id="detail-title">Embroidery Exploration</h2>
+      <p id="detail-description">A showcase of embroidery swatches, embellished tees, and surface explorations.</p>
+     </div>
+    </div>
+    <!-- Dynamic Content Area for Visuals -->
+    <div id="detail-visual-container"></div>
+   </div>
+  </div>
+ </section>
+ <section class="page" id="about" aria-label="About">
+  <div class="section">
+   <div class="about-grid">
+    <div class="portrait"><img decoding="async" src="images/img_05.jpg" alt="Portrait of Tanvi Maheshwari" loading="eager"></div>
+    <div class="about-copy">
+     <p class="eyebrow">About / Profile</p>
+     <h1>Tanvi Maheshwari</h1>
+     <p class="role">Fashion Designer / Gurgaon, India</p>
+     <p class="bio">Fashion Designer with experience in apparel export for international brands. Skilled in CAD development, tech packs, trend research and sampling, with a focus on translating design concepts into commercially relevant garments. Experienced in design development, garment detailing, production coordination and quality standards.</p>
+     <div class="resume-block"><h2>Experience</h2>
+      <p><strong>Assistant Fashion Designer — Richa &amp; Co., Gurgaon</strong><br><span class="about-date">March 2025–Present</span><br>Experience in export-house workflow and international client requirements. Worked on design projects for BELK and J.CREW.</p>
+      <p><strong>Internship — GoodView Fashion Private Limited (Tarun Tahiliani), Gurgaon</strong><br><span class="about-date">4 months</span><br>Built an understanding of luxury couture design workflow and collaborated with the production team on quality control and execution of intricate designs.</p>
+      <p><strong>Internship — Pearl Global Industries Ltd. (PGIL)</strong><br><span class="about-date">2 months</span><br>Gained practical experience in apparel export, production and quality standards, CAD tools and technical drawings, along with teamwork and coordination.</p>
+     </div>
+     <div class="resume-block"><h2>Education</h2>
+      <p><strong>B.Sc. in Fashion Design</strong><br>Northern India Institute of Fashion Technology (NIIFT), Mohali, Punjab <span class="about-date">2021–2024</span></p>
+      <p><strong>Senior Secondary (XII), CBSE</strong><br>St. Joseph’s Convent School <span class="about-date">2021</span></p>
+     </div>
+     <div class="resume-block"><h2>Professional Skills</h2><div class="skills"><span>Fashion CADs &amp; Technical Flat Sketches</span><span>Design Development &amp; Sampling</span><span>Garment Construction</span><span>Pattern Making</span><span>Draping</span><span>Embroidery &amp; Surface Ornamentation</span><span>Tech Packs</span><span>Trend Research</span></div></div>
+     <div class="resume-block"><h2>Software Skills</h2><div class="skills"><span>Adobe Photoshop</span><span>Adobe Illustrator</span><span>Canva</span><span>MS Word</span><span>PowerPoint</span><span>Excel</span></div></div>
+     <div class="resume-block"><h2>Languages</h2><div class="skills"><span>English</span><span>Hindi</span><span>Punjabi</span></div></div>
+     <a class="button" id="download-resume" href="assets/Tanvi_Maheshwari_Resume.pdf" download="Tanvi_Maheshwari_Resume.pdf">Download Resume (PDF)</a>
+    </div>
+   </div>
+  </div>
+ </section>
+</main>
+
+<!-- Fullscreen Lightbox Modal -->
+<div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Fullscreen Image View">
+ <button class="lightbox-close" id="lightbox-close" aria-label="Close fullscreen view">&times;</button>
+ <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">‹</button>
+ <img decoding="async" loading="lazy" class="lightbox-content" id="lightbox-img" src="" alt="Expanded View">
+ <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next image">›</button>
+ <div class="lightbox-count" id="lightbox-count" aria-live="polite"></div>
+</div>
+
+<footer class="site-footer">
+ <div class="footer-contacts">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tanvimaheshwari20@gmail.com" aria-label="Email Tanvi Maheshwari" target="_blank" rel="noopener noreferrer">tanvimaheshwari20@gmail.com</a>
+  <span aria-hidden="true">·</span>
+  <a href="https://www.linkedin.com/in/tanvi-maheshwari-b67a4024b/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" aria-label="Tanvi Maheshwari on LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+ </div>
+ <p class="copyright">© 2026 Tanvi Maheshwari. All rights reserved.</p>
+</footer>
+
+<div class="belk-viewer" id="belk-viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Belk presentation fullscreen viewer">
+ <button class="belk-viewer-close" id="belk-viewer-close" type="button" aria-label="Close fullscreen viewer">×</button>
+ <button class="belk-viewer-prev" id="belk-viewer-prev" type="button" aria-label="Previous page">‹</button>
+ <img decoding="async" loading="lazy" id="belk-viewer-img" alt="">
+ <button class="belk-viewer-next" id="belk-viewer-next" type="button" aria-label="Next page">›</button>
+ <div class="belk-viewer-count" id="belk-viewer-count">PAGE 01 / 07 — COVER</div>
+</div>
+
+<script>
+        try {
+
+(()=>{
+ const pages=[...document.querySelectorAll('.page')],links=[...document.querySelectorAll('.nav a')];
+ const nav=document.querySelector('.nav'),toggle=document.querySelector('.menu-toggle');
+ const details={
+  collection:{number:'01 / GRADUATION COLLECTION',title:'Graduation Collection',description:'Fusion Weave'},
+  'brand-work':{number:'02 / BRAND WORK',title:'Belk — Design Development',description:'A seven-page design development presentation, from collection cover and garment sketches to detailed tech packs.'},
+  'embroidery-exploration':{number:'03 / EMBROIDERY EXPLORATION',title:'Embroidery Exploration',description:'A showcase of embroidery swatches, embellished tees, and surface explorations.'},
+  'hand-sketches':{number:'04 / HAND ILLUSTRATED LOOKS',title:'Hand Illustrated Looks',description:'Fashion illustrations and hand-drawn couture looks.'}
+ };
+
+ // Custom HTML for Embroidery Exploration (Two-column asymmetric layout)
+ const embroideryHTML = `
+  <div class="embroidery-layout">
+   <div class="embroidery-col">
+    <h3 class="embroidery-col-title">Embellished Tees</h3>
+    <div class="collage-wrap">
+     <div class="collage-item item-medium"><img decoding="async" loading="lazy" src="images/img_06.jpg" alt="Embellished Tee 1"></div>
+     <div class="collage-item item-tall"><img decoding="async" loading="lazy" src="images/img_07.jpg" alt="Embellished Tee 2"></div>
+     <div class="collage-item item-tall"><img decoding="async" loading="lazy" src="images/img_08.jpg" alt="Embellished Tee 3"></div>
+     <div class="collage-item item-medium"><img decoding="async" loading="lazy" src="images/img_09.jpg" alt="Embellished Tee 4"></div>
+    </div>
+   </div>
+   <div class="embroidery-divider"></div>
+   <div class="embroidery-col">
+    <h3 class="embroidery-col-title">Embroidered Mocks</h3>
+    <div class="collage-wrap">
+     <div class="collage-item item-small"><img decoding="async" loading="lazy" src="images/img_10.jpg" alt="Embroidered Mock 1"></div>
+     <div class="collage-item item-medium"><img decoding="async" loading="lazy" src="images/img_11.jpg" alt="Embroidered Mock 2"></div>
+     <div class="collage-item item-tall"><img decoding="async" loading="lazy" src="images/img_12.jpg" alt="Embroidered Mock 3"></div>
+     <div class="collage-item item-small"><img decoding="async" loading="lazy" src="images/img_13.jpg" alt="Embroidered Mock 4"></div>
+     <div class="collage-item item-medium"><img decoding="async" loading="lazy" src="images/img_14.jpg" alt="Embroidered Mock 5"></div>
+     <div class="collage-item item-wide"><img decoding="async" loading="lazy" src="images/img_15.jpg" alt="Embroidered Mock 6"></div>
+      <div class="collage-item"><img decoding="async" loading="lazy" src="images/img_16.jpg" alt="Embroidered Mock 7"></div>
+      <div class="collage-item"><img decoding="async" loading="lazy" src="images/img_17.jpg" alt="Embroidered Mock 8"></div>
+    </div>
+   </div>
+  </div>
+ `;
+
+ const belkHTML = "<div class=\"belk-presentation\"><figure class=\"belk-page\" data-index=\"0\"><button class=\"belk-image-button\" type=\"button\" aria-label=\"View page 01: Cover\"><img decoding="async" src=\"images/img_18.jpg\" alt=\"Cover\" loading=\"eager\"></button><figcaption class=\"belk-page-footer\"><span>PAGE 01 / 07</span><span>Cover</span></figcaption></figure><figure class=\"belk-page\" data-index=\"1\"><button class=\"belk-image-button\" type=\"button\" aria-label=\"View page 02: Garment Sketches\"><img decoding="async" src=\"images/img_19.jpg\" alt=\"Garment Sketches\" loading=\"lazy\"></button><figcaption class=\"belk-page-footer\"><span>PAGE 02 / 07</span><span>Garment Sketches</span></figcaption></figure><figure class=\"belk-page\" data-index=\"2\"><button class=\"belk-image-button\" type=\"button\" aria-label=\"View page 03: Navy Ruffle Dress\"><img decoding="async" src=\"images/img_20.jpg\" alt=\"Navy Ruffle Dress\" loading=\"lazy\"></button><figcaption class=\"belk-page-footer\"><span>PAGE 03 / 07</span><span>Navy Ruffle Dress</span></figcaption></figure><figure class=\"belk-page\" data-index=\"3\"><button class=\"belk-image-button\" type=\"button\" aria-label=\"View page 04: Olive Ruffle Blouse\"><img decoding="async" src=\"images/img_21.jpg\" alt=\"Olive Ruffle Blouse\" loading=\"lazy\"></button><figcaption class=\"belk-page-footer\"><span>PAGE 04 / 07</span><span>Olive Ruffle Blouse</span></figcaption></figure><figure class=\"belk-page\" data-index=\"4\"><button class=\"belk-image-button\" type=\"button\" aria-label=\"View page 05: Lurex Blouse\"><img decoding="async" src=\"images/img_22.jpg\" alt=\"Lurex Blouse\" loading=\"lazy\"></button><figcaption class=\"belk-page-footer\"><span>PAGE 05 / 07</span><span>Lurex Blouse</span></figcaption></figure><figure class=\"belk-page\" data-index=\"5\"><button class=\"belk-image-button\" type=\"button\" aria-label=\"View page 06: Embroidered Blouse\"><img decoding="async" src=\"images/img_23.jpg\" alt=\"Embroidered Blouse\" loading=\"lazy\"></button><figcaption class=\"belk-page-footer\"><span>PAGE 06 / 07</span><span>Embroidered Blouse</span></figcaption></figure><figure class=\"belk-page\" data-index=\"6\"><button class=\"belk-image-button\" type=\"button\" aria-label=\"View page 07: Camel Embroidered Dress\"><img decoding="async" src=\"images/img_24.jpg\" alt=\"Camel Embroidered Dress\" loading=\"lazy\"></button><figcaption class=\"belk-page-footer\"><span>PAGE 07 / 07</span><span>Camel Embroidered Dress</span></figcaption></figure></div>";
+
+ const defaultVisualHTML = {
+  collection: `
+<section class="graduation-lookbook" aria-label="Graduation Collection — Fusion Weave lookbook">
+  <div class="lookbook-toolbar">
+    <span class="lookbook-kicker">GRADUATION COLLECTION / FUSION WEAVE</span>
+    <span class="lookbook-count" id="lookbook-inline-count">01 / 08</span>
+  </div>
+  <div class="lookbook-slides">
+    <button class="lookbook-slide" type="button" data-lookbook-index="0" aria-label="Open page 01: Fusion Weave">
+      <img decoding="async" src="images/img_25.jpg" alt="Fusion Weave" loading="eager">
+      <span class="lookbook-slide-caption"><span>01 / 08</span><span>Fusion Weave</span><span aria-hidden="true">↗</span></span>
+    </button>
+    <button class="lookbook-slide" type="button" data-lookbook-index="1" aria-label="Open page 02: Crisscross Weaving Technique">
+      <img decoding="async" src="images/img_26.jpg" alt="Crisscross Weaving Technique" loading="lazy">
+      <span class="lookbook-slide-caption"><span>02 / 08</span><span>Crisscross Weaving Technique</span><span aria-hidden="true">↗</span></span>
+    </button>
+    <button class="lookbook-slide" type="button" data-lookbook-index="2" aria-label="Open page 03: Collection Sketches">
+      <img decoding="async" src="images/img_27.jpg" alt="Collection Sketches" loading="lazy">
+      <span class="lookbook-slide-caption"><span>03 / 08</span><span>Collection Sketches</span><span aria-hidden="true">↗</span></span>
+    </button>
+    <button class="lookbook-slide" type="button" data-lookbook-index="3" aria-label="Open page 04: Look 01">
+      <img decoding="async" src="images/img_28.jpg" alt="Look 01" loading="lazy">
+      <span class="lookbook-slide-caption"><span>04 / 08</span><span>Look 01</span><span aria-hidden="true">↗</span></span>
+    </button>
+    <button class="lookbook-slide" type="button" data-lookbook-index="4" aria-label="Open page 05: Look 02">
+      <img decoding="async" src="images/img_29.jpg" alt="Look 02" loading="lazy">
+      <span class="lookbook-slide-caption"><span>05 / 08</span><span>Look 02</span><span aria-hidden="true">↗</span></span>
+    </button>
+    <button class="lookbook-slide" type="button" data-lookbook-index="5" aria-label="Open page 06: Look 03">
+      <img decoding="async" src="images/img_30.jpg" alt="Look 03" loading="lazy">
+      <span class="lookbook-slide-caption"><span>06 / 08</span><span>Look 03</span><span aria-hidden="true">↗</span></span>
+    </button>
+    <button class="lookbook-slide" type="button" data-lookbook-index="6" aria-label="Open page 07: Look 04">
+      <img decoding="async" src="images/img_31.jpg" alt="Look 04" loading="lazy">
+      <span class="lookbook-slide-caption"><span>07 / 08</span><span>Look 04</span><span aria-hidden="true">↗</span></span>
+    </button>
+    <button class="lookbook-slide" type="button" data-lookbook-index="7" aria-label="Open page 08: Look 05">
+      <img decoding="async" src="images/img_32.jpg" alt="Look 05" loading="lazy">
+      <span class="lookbook-slide-caption"><span>08 / 08</span><span>Look 05</span><span aria-hidden="true">↗</span></span>
+    </button>
+  </div>
+</section>
+
+<div class="lookbook-viewer" id="lookbook-viewer" role="dialog" aria-modal="true" aria-label="Graduation Collection fullscreen presentation" aria-hidden="true">
+  <button class="lookbook-close" type="button" aria-label="Close fullscreen viewer">×</button>
+  <button class="lookbook-prev" type="button" aria-label="Previous slide">←</button>
+  <figure class="lookbook-viewer-figure">
+    <img decoding="async" loading="lazy" id="lookbook-viewer-image" alt="">
+    <figcaption><span id="lookbook-viewer-title">Fusion Weave</span><span id="lookbook-viewer-count">01 / 08</span></figcaption>
+  </figure>
+  <button class="lookbook-next" type="button" aria-label="Next slide">→</button>
+</div>
+`,
+  'brand-work': `<div class="detail-visual-default">BRAND WORK — PROJECT CONTENT</div>`,
+  'hand-sketches': `<section class="hand-illustrated-gallery" aria-label="Hand Illustrated Looks gallery">
+ <div class="hand-look-grid">
+  <button class="hand-look-card" type="button" data-hand-look-index="0" aria-label="Open illustration 1: Emerald and gold bridal lehenga illustration"><img decoding="async" src="images/img_33.jpg" alt="Emerald and gold bridal lehenga illustration" loading="lazy"></button>
+  <button class="hand-look-card" type="button" data-hand-look-index="1" aria-label="Open illustration 2: Crimson and gold bridal fashion illustration"><img decoding="async" src="images/img_34.jpg" alt="Crimson and gold bridal fashion illustration" loading="lazy"></button>
+  <button class="hand-look-card" type="button" data-hand-look-index="2" aria-label="Open illustration 3: Indigo anarkali fashion illustration"><img decoding="async" src="images/img_35.jpg" alt="Indigo anarkali fashion illustration" loading="lazy"></button>
+  <button class="hand-look-card" type="button" data-hand-look-index="3" aria-label="Open illustration 4: Multicolour embroidered bridal lehenga illustration"><img decoding="async" src="images/img_36.jpg" alt="Multicolour embroidered bridal lehenga illustration" loading="lazy"></button>
+  <button class="hand-look-card" type="button" data-hand-look-index="4" aria-label="Open illustration 5: Monochrome embroidered cape ensemble illustration"><img decoding="async" src="images/img_37.jpg" alt="Monochrome embroidered cape ensemble illustration" loading="lazy"></button>
+  <button class="hand-look-card" type="button" data-hand-look-index="5" aria-label="Open illustration 6: Black and white couture evening gown illustration"><img decoding="async" src="images/img_38.jpg" alt="Black and white couture evening gown illustration" loading="lazy"></button>
+  <button class="hand-look-card" type="button" data-hand-look-index="6" aria-label="Open illustration 7: Purple sculptural ruffle dress illustration"><img decoding="async" src="images/img_39.jpg" alt="Purple sculptural ruffle dress illustration" loading="lazy"></button>
+ </div>
+</section>`
+ };
+
+ function showPage(){
+  const hash=location.hash.slice(1),id=['portfolio','about'].includes(hash)?hash:(details[hash]?'portfolio':'portfolio');
+  pages.forEach(p=>p.classList.toggle('active',p.id===id));
+  links.forEach(a=>{if(a.dataset.page===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu');
+  const detail=document.getElementById('project-detail');
+  const visualContainer=document.getElementById('detail-visual-container');
+
+  if(details[hash]){
+   const d=details[hash];
+   document.querySelector('.portfolio-section').classList.add('project-mode');
+   detail.classList.add('open');
+   document.getElementById('detail-number').textContent=d.number;
+   document.getElementById('detail-title').textContent=d.title;
+   document.getElementById('detail-description').textContent=d.description;
+
+   if(hash === 'embroidery-exploration') {
+    visualContainer.innerHTML = embroideryHTML;
+    attachLightboxEvents();
+   } else if(hash === 'brand-work') {
+    visualContainer.innerHTML = belkHTML;
+    attachBelkViewerEvents();
+   } else {
+    visualContainer.innerHTML = defaultVisualHTML[hash] || '';
+    if(hash === 'hand-sketches') attachHandIllustratedEvents();
+   }
+  }else {
+   detail.classList.remove('open');
+   document.querySelector('.portfolio-section').classList.remove('project-mode');
+   if(hash === 'portfolio') window.scrollTo({top:0,behavior:'smooth'});
+  }
+ }
+
+ // Lightbox Modal Functionality
+ const modal = document.getElementById('lightbox-modal');
+ const modalImg = document.getElementById('lightbox-img');
+ const closeBtn = document.getElementById('lightbox-close');
+
+ function attachLightboxEvents(){
+  document.querySelectorAll('.collage-item img, .embroidery-feature-image img').forEach(img=>{
+   img.addEventListener('click',()=>{
+    modalImg.src = img.src;
+    modalImg.alt = img.alt || 'Expanded View';
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden','false');
+   });
+  });
+ }
+
+ let handLookImages = [];
+ let handLookIndex = 0;
+ const handLookPrev = document.getElementById('lightbox-prev');
+ const handLookNext = document.getElementById('lightbox-next');
+ const handLookCount = document.getElementById('lightbox-count');
+ let handLookMode = false;
+ function renderHandLook(){
+  const img = handLookImages[handLookIndex];
+  if(!img) return;
+  modalImg.src = img.currentSrc || img.src;
+  modalImg.alt = img.alt || `Fashion illustration ${handLookIndex+1}`;
+  handLookCount.textContent = `${String(handLookIndex+1).padStart(2,'0')} / ${String(handLookImages.length).padStart(2,'0')}`;
+  handLookPrev.disabled = handLookIndex === 0;
+  handLookNext.disabled = handLookIndex === handLookImages.length-1;
+  handLookPrev.style.opacity = handLookPrev.disabled ? '.25' : '1';
+  handLookNext.style.opacity = handLookNext.disabled ? '.25' : '1';
+ }
+ function attachHandIllustratedEvents(){
+  const cards = [...document.querySelectorAll('#detail-visual-container .hand-look-card')];
+  handLookImages = cards.map(card => card.querySelector('img')).filter(Boolean);
+  cards.forEach((card,index)=>card.addEventListener('click',()=>{
+   handLookMode = true; handLookIndex = index; renderHandLook();
+   modal.classList.add('active'); modal.setAttribute('aria-hidden','false');
+  }));
+ }
+ handLookPrev.addEventListener('click',()=>{if(handLookMode && handLookIndex>0){handLookIndex--;renderHandLook();}});
+ handLookNext.addEventListener('click',()=>{if(handLookMode && handLookIndex<handLookImages.length-1){handLookIndex++;renderHandLook();}});
+
+ function closeModal(){
+  handLookMode = false;
+  handLookCount.textContent = '';
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden','true');
+ }
+
+ closeBtn.addEventListener('click', closeModal);
+ modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+ document.addEventListener('keydown', (e)=>{ if(!modal.classList.contains('active')) return; if(e.key === 'Escape') closeModal(); else if(handLookMode && e.key === 'ArrowLeft' && handLookIndex>0){handLookIndex--;renderHandLook();} else if(handLookMode && e.key === 'ArrowRight' && handLookIndex<handLookImages.length-1){handLookIndex++;renderHandLook();} });
+
+
+ // Belk presentation fullscreen viewer: original image source, no crop or image alteration.
+ const belkViewer = document.getElementById('belk-viewer');
+ const belkViewerImg = document.getElementById('belk-viewer-img');
+ const belkViewerCount = document.getElementById('belk-viewer-count');
+ const belkClose = document.getElementById('belk-viewer-close');
+ const belkPrev = document.getElementById('belk-viewer-prev');
+ const belkNext = document.getElementById('belk-viewer-next');
+ let belkImages = [];
+ let belkIndex = 0;
+ const belkLabels = ['COVER','GARMENT SKETCHES','NAVY RUFFLE DRESS','OLIVE RUFFLE BLOUSE','LUREX BLOUSE','EMBROIDERED BLOUSE','CAMEL EMBROIDERED DRESS'];
+ function renderBelkViewer(){
+  const img = belkImages[belkIndex];
+  if(!img) return;
+  belkViewerImg.src = img.currentSrc || img.src;
+  belkViewerImg.alt = img.alt || belkLabels[belkIndex];
+  belkViewerCount.textContent = `PAGE ${String(belkIndex+1).padStart(2,'0')} / 07 — ${belkLabels[belkIndex]}`;
+  belkPrev.disabled = belkIndex === 0;
+  belkNext.disabled = belkIndex === belkImages.length-1;
+  belkPrev.style.opacity = belkPrev.disabled ? '.25' : '1';
+  belkNext.style.opacity = belkNext.disabled ? '.25' : '1';
+ }
+ function openBelkViewer(index){
+  belkImages = [...document.querySelectorAll('#detail-visual-container .belk-page img')];
+  if(!belkImages.length) return;
+  belkIndex = index;
+  renderBelkViewer();
+  belkViewer.classList.add('active');
+  belkViewer.setAttribute('aria-hidden','false');
+  document.body.classList.add('belk-viewer-open');
+  belkClose.focus();
+ }
+ function closeBelkViewer(){
+  belkViewer.classList.remove('active');
+  belkViewer.setAttribute('aria-hidden','true');
+  document.body.classList.remove('belk-viewer-open');
+ }
+ function attachBelkViewerEvents(){
+  document.querySelectorAll('#detail-visual-container .belk-page').forEach((page,index)=>{
+   page.querySelector('.belk-image-button').addEventListener('click',()=>openBelkViewer(index));
+  });
+ }
+ belkClose.addEventListener('click',closeBelkViewer);
+ belkPrev.addEventListener('click',()=>{if(belkIndex>0){belkIndex--;renderBelkViewer()}});
+ belkNext.addEventListener('click',()=>{if(belkIndex<belkImages.length-1){belkIndex++;renderBelkViewer()}});
+ belkViewer.addEventListener('click',e=>{if(e.target===belkViewer)closeBelkViewer()});
+ document.addEventListener('keydown',e=>{
+  if(!belkViewer.classList.contains('active')) return;
+  if(e.key==='Escape') closeBelkViewer();
+  else if(e.key==='ArrowLeft' && belkIndex>0){belkIndex--;renderBelkViewer()}
+  else if(e.key==='ArrowRight' && belkIndex<belkImages.length-1){belkIndex++;renderBelkViewer()}
+ });
+
+ toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');nav.classList.toggle('open',open)});
+ window.addEventListener('hashchange',showPage);
+ document.querySelector('.detail-close').addEventListener('click',()=>{
+  if(location.hash !== '#portfolio') location.hash='portfolio';
+  else {showPage();window.scrollTo({top:0,behavior:'smooth'});}
+ });
+
+
+ // Graduation Collection fullscreen viewer. The project markup is injected on navigation,
+ // so use delegated events and resolve viewer elements only after the project has opened.
+ const lookbookTitles = ["Fusion Weave","Crisscross Weaving Technique","Collection Sketches","Look 01","Look 02","Look 03","Look 04","Look 05"];
+ // Resolve slide images only when the Graduation Collection tab is open.
+ // Its markup is injected during navigation, so collecting sources at page load
+ // would cache missing relative paths instead of the actual embedded image data.
+ function getLookbookSources(){
+   return Array.from({length:8},(_,i)=>{
+     const slide = document.querySelector('.lookbook-slide[data-lookbook-index="'+i+'"] img');
+     return slide ? (slide.currentSrc || slide.getAttribute("src") || slide.src) : "";
+   });
+ }
+ let lookbookIndex = 0;
+ let previouslyFocused = null;
+ function getLookbookViewer(){ return document.getElementById("lookbook-viewer"); }
+ function showLookbookSlide(index){
+   const sources = getLookbookSources();
+   if(!sources.some(Boolean)) return;
+   lookbookIndex = (index + sources.length) % sources.length;
+   const viewer = getLookbookViewer();
+   if(!viewer) return;
+   const viewerImage = viewer.querySelector("#lookbook-viewer-image");
+   const viewerTitle = viewer.querySelector("#lookbook-viewer-title");
+   const viewerCount = viewer.querySelector("#lookbook-viewer-count");
+   const inlineCount = document.getElementById("lookbook-inline-count");
+   viewerImage.src = sources[lookbookIndex];
+   viewerImage.alt = lookbookTitles[lookbookIndex];
+   viewerTitle.textContent = lookbookTitles[lookbookIndex];
+   const count = String(lookbookIndex+1).padStart(2,"0") + " / 08";
+   viewerCount.textContent = count;
+   if(inlineCount) inlineCount.textContent = count;
+ }
+ function openLookbook(index){
+   const viewer = getLookbookViewer();
+   if(!viewer) return;
+   previouslyFocused = document.activeElement;
+   showLookbookSlide(index);
+   viewer.classList.add("open");
+   viewer.setAttribute("aria-hidden","false");
+   document.body.classList.add("lookbook-viewer-open");
+   viewer.querySelector(".lookbook-close").focus();
+ }
+ function closeLookbook(){
+   const viewer = getLookbookViewer();
+   if(!viewer) return;
+   viewer.classList.remove("open");
+   viewer.setAttribute("aria-hidden","true");
+   document.body.classList.remove("lookbook-viewer-open");
+   if(previouslyFocused && previouslyFocused.focus) previouslyFocused.focus();
+ }
+ document.addEventListener("click",event=>{
+   const slide = event.target.closest(".lookbook-slide");
+   if(slide){openLookbook(Number(slide.dataset.lookbookIndex));return;}
+   const viewer = getLookbookViewer();
+   if(!viewer || !viewer.classList.contains("open")) return;
+   if(event.target.closest(".lookbook-close")) closeLookbook();
+   else if(event.target.closest(".lookbook-prev")) showLookbookSlide(lookbookIndex-1);
+   else if(event.target.closest(".lookbook-next")) showLookbookSlide(lookbookIndex+1);
+   else if(event.target===viewer) closeLookbook();
+ });
+ document.addEventListener("keydown",event=>{
+   const viewer = getLookbookViewer();
+   if(!viewer || !viewer.classList.contains("open")) return;
+   if(event.key==="Escape"){event.preventDefault();closeLookbook();}
+   else if(event.key==="ArrowLeft"){event.preventDefault();showLookbookSlide(lookbookIndex-1);}
+   else if(event.key==="ArrowRight"){event.preventDefault();showLookbookSlide(lookbookIndex+1);}
+ });
+
+ document.getElementById('download-resume').addEventListener('click',()=>window.print());
+ showPage();
+})();
+
+        } catch(e) {
+            console.error('Portfolio script error:', e);
+        }
+</script>
+</body>
+</html>
